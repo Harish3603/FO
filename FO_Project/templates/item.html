@@ -1,0 +1,37 @@
+{% load static %}
+<!DOCTYPE html>
+  <head>
+    <title>{{title}}</title>
+  </head>
+  <body>
+    <form method="POST" action="">
+      {% csrf_token %}
+      <input type="text" name="r_name" placeholder="Search by R Name" />
+      <input type="text" name="f_name" placeholder="Search by F Name" />
+      <input type="text" name="category" placeholder="category" />
+      <input type="submit" value="Search" />
+    </form>
+    <br />
+    <thead>
+      <tr>
+        <th>S.No</th>
+        <th>Restaurant</th>
+        <th>Food Item</th>
+        <th>Price</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <br />
+    {% for item in queryset %}
+    <tr>
+      <td>{{forloop.counter}}</td>
+      <td>{{item.r_name}}</td>
+      <td><a href="{% url 'update_items' item.id %}">{{item.f_name}}</a></td>
+      <td>{{item.price}}</td>
+      <td>{{item.category}}</td>
+      <td><a href="{% url 'delete_items' item.id %}">Delete</a></td>
+    </tr>
+    <br />
+    {% endfor %}
+  </body>
+</html>

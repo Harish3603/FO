@@ -1,0 +1,313 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Menu</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/themify/themify-icons.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/lightbox2/css/lightbox.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+<!--===============================================================================================-->
+<style>
+	#add {
+		background-color: #4CAF50;
+		border: none;
+		color: white;
+		padding: 5px 30px;
+		text-align: center;
+		text-decoration: none;
+		display: inline-block;
+		font-size: 16px;
+		margin: 4px 2px;
+		cursor: pointer;
+		border-radius: 8px;
+		transition: transform 0.3s ease; /* Add smooth transition effect */
+	}
+
+	#add:hover {
+		background-color: #45a049;
+	}
+
+	#add.clicked {
+		transform: translateX(50px); /* Move the button to the right by 50px */
+	}
+</style>
+</head>
+<body class="animsition">
+
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="wrap-menu-header gradient1 trans-0-4">
+			<div class="container h-full">
+				<div class="wrap_header trans-0-3">
+					<!-- Logo -->
+					<div class="logo">
+						<a href="{% url 'index' %}">
+							<img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO" data-logofixed="{% static 'images/icons/logo2.png' %}">
+						</a>
+					</div>
+
+					<!-- Menu -->
+					<div class="wrap_menu p-l-45 p-l-0-xl">
+						<nav class="menu">
+							<ul class="main_menu">
+								<li>
+									<a href="{% url 'index' %}">Home</a>
+								</li>
+
+								<li>
+									<a href="{% url 'menu' %}">Menu</a>
+								</li>
+
+								<li>
+									<a href="{% url 'reservation' %}">Reservation</a>
+								</li>
+
+								
+								<li>
+									<a href="{% url 'about' %}">About</a>
+								</li>
+								<li>
+									<a href="{% url 'contact' %}">Contact</a>
+								</li>
+								
+								<li>
+									<a href="{% url 'login' %}">Login</a>
+								</li>
+								
+
+								<li>
+									<a href="{% url 'cart' %}">Cart</a>
+								</li>
+							</ul>
+						</nav>
+					</div>
+
+					<!-- Social -->
+					<div class="social flex-w flex-l-m p-r-20">
+						<a href="#"><i class="fa fa-tripadvisor" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-facebook m-l-21" aria-hidden="true"></i></a>
+						<a href="#"><i class="fa fa-twitter m-l-21" aria-hidden="true"></i></a>
+
+						<button class="btn-show-sidebar m-l-33 trans-0-4"></button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+
+	<!-- Sidebar -->
+	<aside class="sidebar trans-0-4">
+		<!-- Button Hide sidebar -->
+		<button class="btn-hide-sidebar ti-close color0-hov trans-0-4"></button>
+
+		<!-- - -->
+		<ul class="menu-sidebar p-t-95 p-b-70">
+			<li class="t-center m-b-13">
+				<a href="{% url 'index' %}" class="txt19">Home</a>
+			</li>
+
+			<li class="t-center m-b-13">
+				<a href="{% url 'menu' %}" class="txt19">Menu</a>
+			</li>
+
+			<li class="t-center m-b-13">
+				<a href="{% url 'about' %}l" class="txt19">About</a>
+			</li>
+
+			<li class="t-center m-b-13">
+				<a href="{% url 'blog' %}" class="txt19">Blog</a>
+			</li>
+
+			<li class="t-center m-b-33">
+				<a href="{% url 'contact' %}" class="txt19">Contact</a>
+			</li>
+
+			<li class="t-center">
+				<!-- Button3 -->
+				<a href="{% url 'reservation' %}" class="btn3 flex-c-m size13 txt11 trans-0-4 m-l-r-auto">
+					Reservation
+				</a>
+			</li>
+		</ul>
+
+		<!-- - -->
+	</aside>
+
+
+	<!-- Title Page -->
+	<section class="bg-title-page flex-c-m p-t-160 p-b-80 p-l-15 p-r-15" style="background-image: url({% static 'images/bg-title-page-01.jpg' %});">
+		<h2 class="tit6 t-center">
+			Food Menu
+		</h2>
+	</section>
+
+
+	<!-- Main menu -->
+	<section class="section-mainmenu p-t-110 p-b-70 bg1-pattern">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-10 col-lg-6 p-r-35 p-r-15-lg m-l-r-auto">
+					<div class="wrap-item-mainmenu p-b-22">
+						<h3 class="tit-mainmenu tit10 p-b-25">
+							STARTERS
+						</h3>
+
+						{% for item in list %}
+							{% if item.type == "Starter" %}
+								<div class="item-mainmenu m-b-36">
+									<div class="flex-w flex-b m-b-3">
+										{{ item.name }}
+										<div class="line-item-mainmenu bg3-pattern"></div>
+										
+										<div class="price-item-mainmenu txt22">
+											{{ item.price }}
+										</div>
+										<a href="{% url 'add_to_cart' item.id %}" class="name-item-mainmenu txt21">
+											<button id="add">+</button>
+										</a>
+										<script>
+											document.addEventListener("DOMContentLoaded", function() {
+												var addButton = document.getElementById("add");
+										
+												addButton.addEventListener("click", function() {
+													addButton.classList.add("clicked"); // Add 'clicked' class to move the button to the right
+													setTimeout(function() {
+														addButton.classList.remove("clicked"); // Remove 'clicked' class after a short delay
+													}, 300); // Delay in milliseconds (0.3 seconds in this example)
+												});
+											});
+											document.addEventListener("DOMContentLoaded", function() {
+												var addButton = document.querySelectorAll(".add");
+										
+												addButton.forEach(function(button) {
+													button.addEventListener("click", function() {
+														alert("Item added to cart successfully!");
+													});
+												});
+											});
+										</script>
+									</div>
+									<div class="dropdown">
+										Addon
+									{% for item in list %}
+									{% if item.type == "Addon" %}
+										<div id="myDropdown" class="dropdown-content">
+											<a href="{% url 'add_to_cart' item.id %}">{{item.name}}</a>
+										</div>
+											{% endif %}
+											{% endfor %}
+									</div>
+								</div>
+							{% endif %}
+						{% endfor %}
+
+						<h3 class="tit-mainmenu tit10 p-b-25">
+							MAIN COURSE
+						</h3>
+						
+						{% for item in list %}
+							{% if item.type == "Main" %}
+								<div class="item-mainmenu m-b-36">
+									<div class="flex-w flex-b m-b-3">
+										{{ item.name }}
+										<div class="line-item-mainmenu bg3-pattern"></div>
+										
+										<div class="price-item-mainmenu txt22">
+											{{ item.price }}
+										</div>
+										<a href="{% url 'add_to_cart' item.id %}" class="name-item-mainmenu txt21">
+											<button id="add">+</button>
+										</a>
+										<script>
+											document.addEventListener("DOMContentLoaded", function() {
+												var addButton = document.getElementById("add");
+										
+												addButton.addEventListener("click", function() {
+													addButton.classList.add("clicked"); // Add 'clicked' class to move the button to the right
+													setTimeout(function() {
+														addButton.classList.remove("clicked"); // Remove 'clicked' class after a short delay
+													}, 300); // Delay in milliseconds (0.3 seconds in this example)
+												});
+											});
+										</script>
+									</div>
+
+									<span class="info-item-mainmenu txt23">
+										{{ item.description }}
+									</span>
+								</div>
+							{% endif %}
+						{% endfor %}
+					</div>
+			</div>
+		</div>
+	</section>
+
+	<!-- Footer -->
+	<footer class="bg1">
+
+		<div class="end-footer bg2">
+			<div class="container">
+				<div class="txt17 p-r-20 p-t-5 p-b-5">
+						<p align ='center'> Copyright &copy; 2024 All rights reserved  |  This template is made by FO Team</p>
+				</div>
+			</div>
+		</div>
+	</footer>
+
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/slick/slick.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/slick-custom.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/parallax100/parallax100.js' %}"></script>
+	<script type="text/javascript">
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/lightbox2/js/lightbox.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+
+</body>
+</html>

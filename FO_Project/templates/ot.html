@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<head><link rel = stylesheet type= text/css href = "{% static 'css\\otc.css' %}">
+    <title>Your Cart</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+	<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'fonts/themify/themify-icons.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'vendor/lightbox2/css/lightbox.min.css' %}">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body class="animsition">
+
+	<!-- Header -->
+	<header>
+		<!-- Header desktop -->
+		<div class="wrap-menu-header gradient1 trans-0-4">
+			<div class="container h-full">
+				<div class="wrap_header trans-0-3">
+					<!-- Logo -->
+					<div class="logo">
+						<a href="{% url 'index' %}">
+							<img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO" data-logofixed="{% static 'images/icons/logo2.png' %}">
+						</a>
+					</div>
+
+					<!-- Menu -->
+					<div class="wrap_menu p-l-45 p-l-0-xl">
+						<nav class="menu">
+                            <ul class="main_menu">
+								<li>
+									<a href="{% url 'index' %}">Home</a>
+								</li>
+
+								<li>
+									<a href="{% url 'menu' %}">Menu</a>
+								</li>
+
+								<li>
+									<a href="{% url 'reservation' %}">Reservation</a>
+								</li>
+
+								
+								<li>
+									<a href="{% url 'about' %}">About</a>
+								</li>
+								<li>
+									<a href="{% url 'contact' %}">Contact</a>
+								</li>
+								
+								<li>
+									<a href="{% url 'cart' %}">Cart</a>
+								</li>
+								
+							</ul>
+						</nav>
+					</div>
+
+<body>
+    
+<div class="card">
+    <div class="title">Purchase Reciept</div>
+    <div class="info">
+        <div class="row">
+            <div class="col-7">
+                <span id="heading">Date and Time</span><br>
+                <span id="details">{{dt}}</span>
+            </div>
+            <div class="col-5 pull-right">
+                <span id="heading">Order No.</span><br>
+                <span id="details">012j1gvs356c</span>
+            </div>
+        </div>      
+    </div> 
+    {% for item, price in item_data %}     
+    <div class="pricing">
+        <div class="row">
+            <div class="col-9">
+                <span id="name">{{ item.product.name }}</span>  
+            </div>
+            <div class="col-3">
+                <span id="price">&#8377;{{ price }}</span>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+    <div class="total">
+        <div class="row">
+            <div class="col-9">Total</div>
+            <div class="col-3"><big>&#8377;{{total_price}}</big></div>
+        </div>
+    </div>
+    <div class="tracking">
+        <div class="title">Tracking Order</div>
+    </div>
+    <div class="progress-track">
+        <ul id="progressbar">
+            <li class="step0 active " id="step1">Ordered</li>
+            <li class="step0 active text-center" id="step2">Cooking</li>
+            <li class="step0 active text-right" id="step3">On the way</li>
+            <li class="step0 text-right" id="step4">Delivered</li>
+        </ul>
+    </div>
+        
+       
+    </div>
+</div>
+<script type="text/javascript" src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+	<script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/select2/select2.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script> 
+	<script type="text/javascript" src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/slick/slick.min.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/slick-custom.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/parallax100/parallax100.js' %}"></script>
+	<script type="text/javascript">
+        $('.parallax100').parallax100();
+	</script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+<!--===============================================================================================-->
+	<script type="text/javascript" src="{% static 'vendor/lightbox2/js/lightbox.min.js' %}"></script>
+<!--===============================================================================================-->
+	<script src="{% static 'js/main.js' %}"></script>
+</body>
+</html>

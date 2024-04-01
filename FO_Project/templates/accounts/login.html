@@ -1,0 +1,157 @@
+{% load static %}
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+<head><link rel = stylesheet type= text/css href = "{% static 'css\\cart.css' %}">
+  <title>Your Cart</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->
+<link rel="icon" type="image/png" href="{% static 'images/icons/favicon.png' %}"/>
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/bootstrap/css/bootstrap.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'fonts/font-awesome-4.7.0/css/font-awesome.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'fonts/themify/themify-icons.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animate/animate.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/css-hamburgers/hamburgers.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/animsition/css/animsition.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/select2/select2.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/daterangepicker/daterangepicker.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/slick/slick.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'vendor/lightbox2/css/lightbox.min.css' %}">
+<!--===============================================================================================-->
+<link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+</head>
+<body class="animsition">
+
+<!-- Header -->
+<header>
+  <!-- Header desktop -->
+  <div class="wrap-menu-header gradient1 trans-0-4">
+    <div class="container h-full">
+      <div class="wrap_header trans-0-3">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="{% url 'index' %}">
+            <img src="{% static 'images/icons/logo.png' %}" alt="IMG-LOGO" data-logofixed="{% static 'images/icons/logo2.png' %}">
+          </a>
+        </div>
+
+        <!-- Menu -->
+        <div class="wrap_menu p-l-45 p-l-0-xl">
+          <nav class="menu">
+                          <ul class="main_menu">
+              <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+            </ul>
+          </nav>
+        </div>
+
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-5 col-md-7">
+          <div class="card bg-secondary shadow border-0">
+            <div class="card-header bg-transparent pb-5">
+              <div class="text-muted text-center mt-2 mb-3">
+                Sign IN
+              </div>
+            </div>
+            <div class="card-body px-lg-5 py-lg-5">
+              <div class="text-center text-muted mb-4">
+
+                {% if msg %}
+                  <p>{{ msg }}</p>
+                {% else %}
+                  <p>
+                    Add your credentials
+                  </p>
+                {% endif %}  
+
+              </div>
+
+              <form method="POST">
+
+                {% csrf_token %}
+
+                <div class="form-group mb-3">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                    </div>
+                    <input type=text>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="input-group input-group-alternative">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text"><i class="ni ni-lock-circle-open"></i></span>
+                    </div>
+                    <input type = password>
+                  </div>
+                </div>
+                <div class="custom-control custom-control-alternative custom-checkbox">
+                  <input class="custom-control-input" id=" customCheckLogin" type="checkbox">
+                  <label class="custom-control-label" for=" customCheckLogin">
+                    <span class="text-muted">Remember me</span>
+                  </label>
+                </div>
+                <div class="text-center">
+                  <button type="submit" class="btn btn-primary my-4">Sign in</button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-6">
+              <a href="{% url 'regs ' %}" class="text-light"><small>Register</small></a>
+            </div>
+            <div class="col-6 text-right">
+              <a href="https://appseed.us/support" class="text-light"><small>Get Support</small></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script type="text/javascript" src="{% static 'vendor/jquery/jquery-3.2.1.min.js' %}"></script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/animsition/js/animsition.min.js' %}"></script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/bootstrap/js/popper.js' %}"></script>
+      <script type="text/javascript" src="{% static 'vendor/bootstrap/js/bootstrap.min.js' %}"></script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/select2/select2.min.js' %}"></script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/daterangepicker/moment.min.js' %}"></script> 
+      <script type="text/javascript" src="{% static 'vendor/daterangepicker/daterangepicker.js' %}"></script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/slick/slick.min.js' %}"></script>
+      <script type="text/javascript" src="{% static 'js/slick-custom.js' %}"></script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/parallax100/parallax100.js' %}"></script>
+      <script type="text/javascript">
+            $('.parallax100').parallax100();
+      </script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/countdowntime/countdowntime.js' %}"></script>
+    <!--===============================================================================================-->
+      <script type="text/javascript" src="{% static 'vendor/lightbox2/js/lightbox.min.js' %}"></script>
+    <!--===============================================================================================-->
+      <script src="{% static 'js/main.js' %}"></script>
+    </body>
+{% endblock content %}
+
+<!-- Specific JS goes HERE --> 
+{% block javascripts %}{% endblock javascripts %}

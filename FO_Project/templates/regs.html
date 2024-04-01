@@ -1,0 +1,56 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Design by foolishdeveloper.com -->
+    <title>FoodApp</title>
+ 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'pstyles.css' %}">
+    <!-- Link to external JavaScript file -->
+    <script src="{% static 'vali.js' %}"></script> 
+
+    <script>
+        function validateForm() {
+            var password = document.getElementById("password").value;
+            var confirm_password = document.getElementById("confirm_password").value;
+
+            if (password != confirm_password) {
+                alert("Passwords do not match!");
+                return false;
+            }
+            return true;
+        }
+    </script>
+    
+    <style media="screen">
+        /* Your CSS styles */
+    </style>
+</head>
+<body>
+    <div class="background">
+    </div>
+    <form id="rf" onsubmit="return validateForm()">
+        <h3>Register Here</h3>
+        
+        <label for="username">Username</label>
+        <input type="text" placeholder="Name" id="username">
+
+        <label for="email">Email Id</label>
+        <input type="email" placeholder="e-mail" id="email">
+
+        <label for="phno">Phone Number</label>
+        <input type="tel" placeholder="phone number" id="phno">
+
+        <label for="password">Password</label>
+        <input type="password" placeholder="Password" id="password">
+                
+        <button type="submit">Sign Up</button>
+        <div class="user">
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <div class="fb"><a href="{% url 'login' %}">Login</a></div>
+        </div>
+    </form>
+</body>
+</html>
